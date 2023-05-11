@@ -39,4 +39,6 @@ jobs:
         with:
           command_line: ./node_modules/7zip-bin/mac/x64/7za l ./dist/zap-mac-x64.zip | grep zap-cli
           contains: 'zap-cli'
+          expected_result: PASSED
+
 
