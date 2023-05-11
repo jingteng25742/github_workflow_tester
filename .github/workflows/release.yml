@@ -41,4 +41,7 @@ jobs:
           contains: 'zap-cli'
           expected_result: PASSED
 
+      - run: cat ./output.txt
+
+
 
