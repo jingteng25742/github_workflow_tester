@@ -59,11 +59,11 @@ jobs:
         if: startsWith(matrix.os, 'macos')
         run: |
           output=$(./node_modules/7zip-bin/mac/x64/7za l ./dist/zap-mac-x64.zip)
-          echo $output
-          if [[ $output == *"fileD"* ]]; then
-            echo "Output contains 'bye'"
+          expression=fileD
+          if [[ $output == *"$expression"* ]]; then
+            echo "Output contains $expression"
           else
-            echo "Output does not contain 'bye'"
+            echo "Output does not contain $expression"
             exit 1
           fi
 
