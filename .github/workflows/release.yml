@@ -55,6 +55,13 @@ jobs:
           command_line: ./node_modules/7zip-bin/mac/x64/7za l ./dist/zap-mac-x64.zip
           contains: fileB
 
+      - name: fileD
+        if: startsWith(matrix.os, 'macos')
+        uses: GuillaumeFalourd/assert-command-line-output@v2.1
+        with:
+          command_line: ./node_modules/7zip-bin/mac/x64/7za l ./dist/zap-mac-x64.zip
+          contains: fileD
+
       - name: output
         shell: bash
         run: cat ./output.txt
